@@ -1,19 +1,20 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Footer from './components/Footer'
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import RegisterPage from "./components/RegisterPage";
+import LoginPage from "./components/LoginPage";
+import Footer from "./components/Footer";
 
 function App() {
-  
-
   return (
     <>
-      <Navbar/>
-      <Home/>
-      <Footer/>
+      <Navbar />
+      {/* <Home/> */}
+      <RegisterPage />
+      {/* <LoginPage /> */}
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
