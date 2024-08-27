@@ -2,49 +2,36 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./CardPizza.css";
-import { pizzasMenu } from "../data/pizzas.js";
+// import { pizzasMenu } from "../data/pizzas.js";
 
-function CardPizza(props) {
+function CardPizza({ pizza }) {
+  const { id, img, ingredients, name, price } = pizza;
   return (
     <>
-      <h1 className="text-center mt-3">Elige a la carta!</h1>
-      <p className="text-center">
-        Las mejores sabores del mediterraneo en un solo lugar
-      </p>
-      <div className="container d-flex flex-wrap gap-5 justify-content-start mb-4">
-        {pizzasMenu.map((pizza) => {
-          const { desc, id, img, ingredients, name, price } = pizza;
-          return (
-            <div>
-              <div key={id}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src={img} />
-                  <Card.Body className="card-body">
-                    <Card.Title className="card-title">
-                      Pizza: {name}
-                    </Card.Title>
-                    <Card.Text className="cards-text">
-                      <p className="text-start">Sobre la pizza: {desc}</p>
-                      <p className="text-start">
-                        🍕 Ingredientes:
-                        <ul>
-                          {ingredients.map((ingredient, i) => (
-                            <li key={i}>{ingredient}</li>
-                          ))}
-                        </ul>
-                      </p>
-                      <p className="card-precio">Precio: ${price}</p>
-                    </Card.Text>
-                    <div className="cards-buttons">
-                      <Button variant="outline-dark">Ver Más 👀</Button>
-                      <Button variant="dark">Añadir 🛒</Button>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </div>
-            </div>
-          );
-        })}
+      <div>
+        <div key={id} className="card" style={{ width: "250px;" }}>
+          <img src={img} className="card-img-top images" alt="..." />
+          <div className="card-body">
+            <h3 className="card-title mb-0">Pizza: {name}</h3>
+          </div>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              <p>🍕 Ingredientes:</p>
+              {ingredients.map((ingredient, i) => (
+                <li key={i}>{ingredient}</li>
+              ))}
+            </li>
+            <h5 className="list-group-item mb-0">Precio: {price}</h5>
+          </ul>
+          <div className="card-body cards-buttons d-flex justify-content-evenly">
+            <a href="#" className="btn btn-dark">
+              Ver Más 👀
+            </a>
+            <a href="#" className="btn btn-dark">
+              Añadir 🛒
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );

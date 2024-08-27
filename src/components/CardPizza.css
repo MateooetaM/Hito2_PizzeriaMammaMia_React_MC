@@ -1,29 +1,10 @@
-.card-body {
-  padding: 0px;
-  width: 100%;
+ul {
+  list-style-type: none;
 }
-.card-title {
-  width: 100%;
-  border-bottom: solid 0.1px rgb(175, 175, 175);
-  margin: 0;
-  padding: 1rem;
+.images {
+  height: 250px;
+  width: auto;
 }
-.cards-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.cards-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1rem;
-}
-.card-text .card-precio {
-  width: 100%;
-  border-top: solid 0.1px rgb(175, 175, 175);
-  margin-bottom: 0%;
-  font-size: 24px;
-  font-weight: 500;
+.card {
+  height: 450px;
 }
